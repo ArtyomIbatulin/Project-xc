@@ -1,15 +1,15 @@
-import './App.css'
-import Typography from '@mui/material/Typography';
+import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+import { AppRouter } from "./components/AppRouter";
 
 function App() {
-
   return (
-    <div className="App">
-      <Typography variant="h1" gutterBottom>
-      Project works
-      </Typography>
-    </div>
-  )
+    <BrowserRouter>
+      <div className="App">
+        <AppRouter />
+      </div>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
