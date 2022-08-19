@@ -8,13 +8,13 @@ import {
   REGISTRATION_ROUTE,
   WISHLIST_ROUTE,
 } from "./utils/consts";
-import AdminPage from "./pages/AdminPage";
-import Auth from "./pages/Auth";
-import BookPage from "./pages/BookPage";
-import MainPage from "./pages/MainPage";
-import Order from "./pages/Order";
-import Profile from "./pages/Profile";
-import Wishlist from "./pages/Wishlist";
+import { AdminPage } from "./pages/AdminPage";
+import { Auth } from "./pages/Auth";
+import { BookPage } from "./pages/BookPage";
+import { MainPage } from "./pages/MainPage.jsx";
+import { Order } from "./pages/Order";
+import { Profile } from "./pages/Profile";
+import { Wishlist } from "./pages/Wishlist.jsx";
 
 export const authRoutes = [
   {
