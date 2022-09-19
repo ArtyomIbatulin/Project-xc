@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { authRoutes, publicRoutes } from "../routes";
 
 export const AppRouter = () => {
@@ -9,12 +9,12 @@ export const AppRouter = () => {
     <Routes>
       {isAuth &&
         authRoutes.map(({ path, Component }) => (
-          <Route key={path} path={path} element={<Component />} exact />
+          <Route key={path} path={path} element={<Component />} />
         ))}
       {publicRoutes.map(({ path, Component }) => (
-        <Route key={path} path={path} element={<Component />} exact />
+        <Route key={path} path={path} element={<Component />} />
       ))}
-      // redirect в новом rrd
+      {<Route path="*" element={<Navigate to="/" replace />} />}
     </Routes>
   );
 };
