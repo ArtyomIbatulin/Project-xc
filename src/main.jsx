@@ -12,5 +12,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </Provider>
   </React.StrictMode>
 );
-
-// react-redux do not exist

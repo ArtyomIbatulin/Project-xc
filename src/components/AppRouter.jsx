@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { authRoutes, publicRoutes } from "../routes";
+import { useDispatch, useSelector } from "react-redux";
 
 export const AppRouter = () => {
   const isAuth = false;
