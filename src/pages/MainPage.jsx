@@ -6,6 +6,9 @@ import { inc } from "../store/features/user/userSlice";
 export const MainPage = () => {
   const auth = useSelector((state) => state.user.isAuth);
   const count = useSelector((state) => state.user.count);
+  const author = useSelector((state) => state.author.name);
+  const book = useSelector((state) => state.book.name);
+
   const dispatch = useDispatch();
 
   return (
@@ -13,6 +16,9 @@ export const MainPage = () => {
       <div>MainPage</div>
       <h2>Auth - {JSON.stringify(auth, null, 2)}</h2>
       <h2>Count - {count}</h2>
+      <h2>Author - {author}</h2>
+      <h2>Book - {book}</h2>
+
       <button onClick={() => dispatch(isAuth())}>Change state</button>
       <button onClick={() => dispatch(inc())}>Count</button>
     </>
