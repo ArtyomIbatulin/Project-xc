@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  id: 1,
   name: "Название",
   price: 1000,
   description: "Описание книги",
@@ -10,12 +11,7 @@ const initialState = {
 const bookSlice = createSlice({
   name: "book",
   initialState,
-  reducers: {
-    isAuth: (state) => {
-      state.isAuth = !state.isAuth;
-    },
-  },
+  reducers: {},
 });
 
 export default bookSlice.reducer;
-export const { isAuth } = bookSlice.actions;
