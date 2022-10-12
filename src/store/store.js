@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import authorSlice from "./features/author/authorSlice";
 import bookSlice from "./features/book/bookSlice";
 import categorySlice from "./features/category/categorySlice";
+import commentSlice from "./features/comment/commentSlice";
 import userSlice from "./features/user/userSlice";
 
 const store = configureStore({
@@ -10,6 +11,7 @@ const store = configureStore({
     book: bookSlice,
     author: authorSlice,
     category: categorySlice,
+    comment: commentSlice,
   },
 });
 
