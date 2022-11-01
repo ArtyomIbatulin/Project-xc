@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Container from "@mui/material/Container";
@@ -11,9 +12,12 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { NavLink } from "react-router-dom";
-import { REGISTRATION_ROUTE } from "../utils/consts";
+import { REGISTRATION_ROUTE, LOGIN_ROUTE } from "../utils/consts";
 
 export const Auth = () => {
+  const location = useLocation();
+  const isLogin = location.pathname === LOGIN_ROUTE;
+
   const [values, setValues] = React.useState({
     password: "",
     showPassword: false,
@@ -53,7 +57,9 @@ export const Auth = () => {
           padding: 5,
         }}
       >
-        <Typography variant="h6">Авторизация</Typography>
+        <Typography variant="h6">
+          {isLogin ? "Авторизация" : "Регистрация"}
+        </Typography>
 
         <Stack spacing={2} direction="column">
           <TextField
@@ -83,9 +89,13 @@ export const Auth = () => {
           />
         </Stack>
 
-        <NavLink to={REGISTRATION_ROUTE}>Зарегистрируйся</NavLink>
+        {isLogin ? (
+          <NavLink to={REGISTRATION_ROUTE}>Зарегистрируйся</NavLink>
+        ) : (
+          <NavLink to={LOGIN_ROUTE}>Войдите</NavLink>
+        )}
 
-        <Button variant="outlined">Войти</Button>
+        <Button variant="outlined">{isLogin ? "Войти" : "Регистрация"}</Button>
       </Box>
     </Container>
   );
