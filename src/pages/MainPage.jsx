@@ -1,7 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Grid from "@mui/material/Grid";
+import Container from "@mui/material/Container";
 import { isAuth } from "../store/features/user/userSlice";
 import { inc } from "../store/features/user/userSlice";
+import { CategoryBar } from "../components/CategoryBar";
 
 export const MainPage = () => {
   const auth = useSelector((state) => state.user.isAuth);
@@ -13,14 +16,14 @@ export const MainPage = () => {
 
   return (
     <>
-      <div>MainPage</div>
-      <h2>Auth - {JSON.stringify(auth, null, 2)}</h2>
-      <h2>Count - {count}</h2>
-      <h2>Author - {author}</h2>
-      <h2>Book - {book}</h2>
-
-      <button onClick={() => dispatch(isAuth())}>Change state</button>
-      <button onClick={() => dispatch(inc())}>Count</button>
+      <Container maxWidth="lg">
+        <Grid container spacing={2}>
+          <Grid item md={3}>
+            <CategoryBar />
+          </Grid>
+          <Grid item md={9}></Grid>
+        </Grid>
+      </Container>
     </>
   );
 };
