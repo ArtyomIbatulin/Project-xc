@@ -38,11 +38,17 @@ export const Auth = () => {
           "& > :not(style)": { m: 1, width: "25ch" },
         }}
       >
-        <TextField id="login" label="Login" variant="outlined" />
+        <TextField
+          id="login"
+          placeholder="Введите ваш login"
+          variant="outlined"
+        />
 
-        <InputLabel htmlFor="input-password">Введите пароль</InputLabel>
+        {/* <InputLabel htmlFor="input-password">Введите пароль</InputLabel> */}
+
         <OutlinedInput
           id="input-password"
+          placeholder="Введите ваш пароль"
           type={values.showPassword ? "text" : "password"}
           value={values.password}
           onChange={handleChange("password")}
@@ -58,7 +64,6 @@ export const Auth = () => {
               </IconButton>
             </InputAdornment>
           }
-          label="Password"
         />
       </Box>
     </Container>
