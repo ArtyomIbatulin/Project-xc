@@ -4,14 +4,17 @@ import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 
 export const AuthorChips = () => {
-  const handleClick = () => {
-    console.info("You clicked the Chip.");
+  const author = useSelector((state) => state.author);
+
+  const handleClick = (e) => {
+    console.log(e.target.innerText);
   };
 
   return (
     <Stack direction="row" spacing={1} mt={1}>
-      <Chip label="Clickable" onClick={handleClick} />
-      <Chip label="Clickable" variant="outlined" onClick={handleClick} />
+      {author.map((author) => (
+        <Chip key={author.id} label={author.name} onClick={handleClick} />
+      ))}
     </Stack>
   );
 };
