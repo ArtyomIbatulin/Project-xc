@@ -1,10 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 
 export const CategoryBar = () => {
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const category = useSelector((state) => state.category);
+
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
 
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
@@ -12,24 +15,15 @@ export const CategoryBar = () => {
 
   return (
     <List component="div" aria-label="categoryBar">
-      <ListItemButton
-        selected={selectedIndex === 0}
-        onClick={(event) => handleListItemClick(event, 0)}
-      >
-        <ListItemText primary="Все" />
-      </ListItemButton>
-      <ListItemButton
-        selected={selectedIndex === 1}
-        onClick={(event) => handleListItemClick(event, 1)}
-      >
-        <ListItemText primary="Фантастика" />
-      </ListItemButton>
-      <ListItemButton
-        selected={selectedIndex === 2}
-        onClick={(event) => handleListItemClick(event, 2)}
-      >
-        <ListItemText primary="Научное" />
-      </ListItemButton>
+      {category.map((category) => (
+        <ListItemButton
+          key={category.id}
+          selected={selectedIndex === category.id}
+          onClick={(event) => handleListItemClick(event, category.id)}
+        >
+          <ListItemText primary={category.name} />
+        </ListItemButton>
+      ))}
     </List>
   );
 };
