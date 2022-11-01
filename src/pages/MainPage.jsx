@@ -2,9 +2,8 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
-import { isAuth } from "../store/features/user/userSlice";
-import { inc } from "../store/features/user/userSlice";
 import { CategoryBar } from "../components/CategoryBar";
+import { AuthorChips } from "../components/AuthorChips";
 
 export const MainPage = () => {
   const auth = useSelector((state) => state.user.isAuth);
@@ -21,7 +20,9 @@ export const MainPage = () => {
           <Grid item md={3}>
             <CategoryBar />
           </Grid>
-          <Grid item md={9}></Grid>
+          <Grid item md={9}>
+            <AuthorChips />
+          </Grid>
         </Grid>
       </Container>
     </>

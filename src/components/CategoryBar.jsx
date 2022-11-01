@@ -27,3 +27,5 @@ export const CategoryBar = () => {
     </List>
   );
 };
+
+// Save selected list to redux store
