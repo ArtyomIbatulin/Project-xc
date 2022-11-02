@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import { CategoryBar } from "../components/CategoryBar";
-import { AuthorChips } from "../components/AuthorChips";
+import { AuthorDeletableChips } from "../components/AuthorDeletableChips";
 
 export const MainPage = () => {
   const auth = useSelector((state) => state.user.isAuth);
@@ -21,7 +21,7 @@ export const MainPage = () => {
             <CategoryBar />
           </Grid>
           <Grid item md={9}>
-            <AuthorChips />
+            <AuthorDeletableChips />
           </Grid>
         </Grid>
       </Container>
