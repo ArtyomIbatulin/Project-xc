@@ -6,12 +6,12 @@ import Stack from "@mui/material/Stack";
 export const AuthorDeletableChips = () => {
   const author = useSelector((state) => state.author);
 
-  const handleClick = () => {
-    console.info("You clicked the Chip.");
+  const handleClick = (e) => {
+    console.log(e.target.innerText);
   };
 
-  const handleDelete = () => {
-    console.info("You clicked the delete icon.");
+  const handleDelete = (e) => {
+    console.log("delete");
   };
 
   return (

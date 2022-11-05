@@ -1,9 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Grid from "@mui/material/Grid";
-import Container from "@mui/material/Container";
 import { CategoryBar } from "../components/CategoryBar";
-import { AuthorDeletableChips } from "../components/AuthorDeletableChips";
+import { AuthorChips } from "../components/AuthorChips";
 
 export const MainPage = () => {
   const auth = useSelector((state) => state.user.isAuth);
@@ -15,16 +14,14 @@ export const MainPage = () => {
 
   return (
     <>
-      <Container maxWidth="lg">
-        <Grid container spacing={2}>
-          <Grid item md={3}>
-            <CategoryBar />
-          </Grid>
-          <Grid item md={9}>
-            <AuthorDeletableChips />
-          </Grid>
+      <Grid container spacing={2}>
+        <Grid item md={3}>
+          <CategoryBar />
         </Grid>
-      </Container>
+        <Grid item md={9}>
+          <AuthorChips />
+        </Grid>
+      </Grid>
     </>
   );
 };
