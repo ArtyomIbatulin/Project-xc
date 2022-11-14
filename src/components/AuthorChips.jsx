@@ -32,30 +32,12 @@ export const AuthorChips = () => {
       </Stack>
 
       <div>
-        <h2> Single Item</h2>
         <Slider {...settings}>
-          <div>
-            <h3>1</h3>
-          </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
+          {author.map((author) => (
+            <Chip key={author.id} label={author.name} onClick={handleClick} />
+          ))}
         </Slider>
       </div>
     </>
   );
 };
-
-// Scroller chips
