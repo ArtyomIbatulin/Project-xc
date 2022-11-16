@@ -16,11 +16,12 @@ export const AuthorChips = () => {
   };
 
   const settings = {
-    dots: true,
-    infinite: true,
+    dots: false,
+    infinite: false,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 6,
     slidesToScroll: 1,
+    swipeToSlide: true,
   };
 
   return (
