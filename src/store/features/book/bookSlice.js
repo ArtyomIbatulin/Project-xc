@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   id: 1,
-  name: "Название",
+  name: "Rings",
   price: 1000,
   description: "Описание книги",
   img: "Адрес картинки",

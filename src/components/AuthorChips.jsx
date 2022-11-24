@@ -6,7 +6,7 @@ import Stack from "@mui/material/Stack";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Slider from "react-slick";
+// import Slider from "react-slick";
 
 export const AuthorChips = () => {
   const author = useSelector((state) => state.author);
@@ -19,9 +19,9 @@ export const AuthorChips = () => {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 1,
     swipeToSlide: true,
+    slidesToShow: 6,
+    variableWidth: true,
   };
 
   return (
@@ -32,13 +32,15 @@ export const AuthorChips = () => {
         ))}
       </Stack>
 
-      <div>
+      {/* <div>
         <Slider {...settings}>
           {author.map((author) => (
             <Chip key={author.id} label={author.name} onClick={handleClick} />
           ))}
         </Slider>
-      </div>
+      </div> */}
     </>
   );
 };
+
+// fix slider chips
