@@ -1,13 +1,12 @@
 import React from "react";
+import Grid from "@mui/material/Grid";
 
 export const BookItem = ({ item }) => {
   return (
     <>
-      {item.id}
-      {item.name}
-      {item.price}
-      {item.description}
-      {item.img}
+      <Grid item md={3}>
+        item
+      </Grid>
     </>
   );
 };
