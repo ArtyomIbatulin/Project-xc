@@ -22,7 +22,7 @@ export const BookItem = ({ item }) => {
             <Typography gutterBottom variant="h5" component="div">
               {item.name}
             </Typography>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h6" component="div">
               {item.price}
             </Typography>
             <Typography variant="body2" color="text.secondary">
