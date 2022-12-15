@@ -1,4 +1,6 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { BOOK_ROUTE } from "../utils/consts";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -8,10 +10,14 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 export const BookItem = ({ item }) => {
+  const navigate = useNavigate();
   return (
     <>
       <Grid item>
-        <Card sx={{ maxWidth: 350 }}>
+        <Card
+          sx={{ maxWidth: 350 }}
+          onClick={() => navigate(BOOK_ROUTE + "/" + item.id)}
+        >
           <CardMedia
             component="img"
             height="140"
