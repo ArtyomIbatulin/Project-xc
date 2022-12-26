@@ -1,5 +1,6 @@
 import React from "react";
 import { MyImage } from "../components/Image/MyImage";
+import { Typography } from "@mui/material";
 
 const book = {
   id: 1,
@@ -10,7 +11,7 @@ const book = {
   img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbQ7qVM6wbOh3pQJgnqqJTMXX7QVXqNcC5AA&usqp=CAU",
   category: "Фантастика",
   commentText: "Текст комментария",
-  date: "Дата в формате даты",
+  commentDate: "Дата в формате даты",
   rating: "5",
 };
 
@@ -22,8 +23,9 @@ export const BookPage = () => {
           mt: 1,
         }}
         alt="image"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbQ7qVM6wbOh3pQJgnqqJTMXX7QVXqNcC5AA&usqp=CAU"
+        src={book.img}
       />
+      <Typography variant="h5">{book.name}</Typography>
     </>
   );
 };
