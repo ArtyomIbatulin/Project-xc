@@ -18,6 +18,9 @@ const book = {
 export const BookPage = () => {
   return (
     <>
+      <br></br>
+      <Typography variant="body1">{book.author}</Typography>
+      <Typography variant="h4">{book.name}</Typography>
       <MyImage
         sx={{
           mt: 1,
@@ -25,7 +28,6 @@ export const BookPage = () => {
         alt="image"
         src={book.img}
       />
-      <Typography variant="h5">{book.name}</Typography>
     </>
   );
 };

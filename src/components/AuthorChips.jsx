@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 
 // import Slider from "react-slick";
 
@@ -32,13 +32,13 @@ export const AuthorChips = () => {
         ))}
       </Stack>
 
-      {/* <div>
+      {/* { <div>
         <Slider {...settings}>
           {author.map((author) => (
             <Chip key={author.id} label={author.name} onClick={handleClick} />
           ))}
         </Slider>
-      </div> */}
+      </div> } */}
     </>
   );
 };
