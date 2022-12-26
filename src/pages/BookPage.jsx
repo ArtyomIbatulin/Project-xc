@@ -1,5 +1,5 @@
 import React from "react";
-import { MyImage } from "../components/Image/MyImage";
+import { MyImage } from "../components/image/MyImage";
 import { Typography } from "@mui/material";
 
 const book = {
