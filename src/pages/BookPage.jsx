@@ -1,6 +1,7 @@
 import React from "react";
 import { MyImage } from "../components/image/MyImage";
 import { Typography } from "@mui/material";
+import { SliderImg } from "../components/slider/Slider";
 
 const book = {
   id: 1,
@@ -28,6 +29,7 @@ export const BookPage = () => {
         alt="image"
         src={book.img}
       />
+      <SliderImg />
     </>
   );
 };
